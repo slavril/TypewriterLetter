@@ -8,7 +8,7 @@ function Rou() {
         <StoreProvider>
             <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route exact path="/home" element={<Home />} />
+                <Route exact path="/TypewriterLetter" element={<Home />} />
             </Routes>
         </StoreProvider>
     )
