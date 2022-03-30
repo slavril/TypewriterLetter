@@ -6,11 +6,13 @@ import LineModel, { lines } from '../../models/Line.model'
 
 import html2canvas from 'html2canvas'
 
+import Stamp from '../stamp/Stamp.jsx'
+
 function Home() {
     const navigate = useNavigate();
     const [inputText, setInputText] = useState(new LineModel(0));
     const [contents, setContent] = useState(lines());
-
+    const [stamp, setStamp] = useState();
 
     /**
      * @type {LineModel[]}
@@ -61,6 +63,7 @@ function Home() {
         document.getElementById('typewriter-input').value = ''
         setInputText((new LineModel(0)))
         setContent(lines())
+        setStamp(null)
     }
 
     const updateLine = (e) => {
@@ -76,6 +79,22 @@ function Home() {
         });
     }
 
+    const importantMark = () => {
+        setStamp({ type: 1, text: 'Important' })
+    }
+
+    const draftMark = () => {
+        setStamp({ type: 0, text: 'Draft' })
+    }
+
+    const renderStamp = () => {
+        if (stamp) {
+            return <Stamp>{{ type: stamp.type, text: stamp.text }}</Stamp>
+        }
+
+        return null
+    }
+
     return (
         <div className="body-all">
             <div className="top-view">
@@ -83,12 +102,17 @@ function Home() {
             </div>
             <div className="page-view" id="capture">
                 {renderLines()}
+                {renderStamp()}
             </div>
             <div className="typewriter-view">
                 <input maxLength="40" type="text" onChange={(e) => { updateLine(e.target.value) }} placeholder='Type your content' id="typewriter-input" className="typewriter-input font-gg" />
                 <button className="enter-button font-gg" onClick={addLine}>Enter</button>
-                <button className="print-button font-gg" onClick={capturePage}>Print</button>
-                <button className="blank-button font-gg" onClick={newPage}>Blank page</button>
+                <div className="tool-view">
+                    <button className="tool-button begin font-gg important" onClick={capturePage}>Print</button>
+                    <button className="tool-button font-gg" onClick={newPage}>Blank page</button>
+                    <button className="tool-button font-gg" onClick={importantMark}>Important</button>
+                    <button className="tool-button font-gg" onClick={draftMark}>Draft</button>
+                </div>
             </div>
             <div className="bottom-view">
                 <div className="text font-gg">{'\u25CF'} 2022 {'\u25CF'}</div>

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/TypewriterLetter/static/css/main.36a4f6c6.css",
-    "main.js": "/TypewriterLetter/static/js/main.053aa788.js",
+    "main.css": "/TypewriterLetter/static/css/main.ea0e6546.css",
+    "main.js": "/TypewriterLetter/static/js/main.f7f2e737.js",
     "static/js/787.066c6059.chunk.js": "/TypewriterLetter/static/js/787.066c6059.chunk.js",
     "index.html": "/TypewriterLetter/index.html",
-    "main.36a4f6c6.css.map": "/TypewriterLetter/static/css/main.36a4f6c6.css.map",
-    "main.053aa788.js.map": "/TypewriterLetter/static/js/main.053aa788.js.map",
+    "main.ea0e6546.css.map": "/TypewriterLetter/static/css/main.ea0e6546.css.map",
+    "main.f7f2e737.js.map": "/TypewriterLetter/static/js/main.f7f2e737.js.map",
     "787.066c6059.chunk.js.map": "/TypewriterLetter/static/js/787.066c6059.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.36a4f6c6.css",
-    "static/js/main.053aa788.js"
+    "static/css/main.ea0e6546.css",
+    "static/js/main.f7f2e737.js"
   ]
 }
